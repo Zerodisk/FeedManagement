@@ -23,15 +23,15 @@ environments {
 			dialect = org.hibernate.dialect.MySQL5InnoDBDialect		//org.hibernate.dialect.DB2Dialect
 			dbCreate = "validate" 									//'validate', 'create-drop'
 			
-			//+++++ this is for mac ++++++
-			url = "jdbc:mysql://localhost:8889/NEAT"   				//"jdbc:db2://d1neatvip.dev.o.com:50000/ODC1"
+			//++++++++++ this is for mac ++++++++
+			url = "jdbc:mysql://localhost:8889/NEAT"   				
 			username = "root"
 			password = "root"
 			 
 			
-			//+++++ this is for Ubuntu
+			//+++++++++ this is for Ubuntu +++++++++
 			/*
-			url = "jdbc:mysql://localhost/NEAT"   				//"jdbc:db2://d1neatvip.dev.o.com:50000/ODC1"
+			url = "jdbc:mysql://localhost/NEAT"   				
 			username = "root"
 			password = "manutd01"
 			*/

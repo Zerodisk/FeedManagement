@@ -142,5 +142,8 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.grails.ide.eclipse.core.CLASSPATH_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/http-builder-0.7.2.jar"/>
+	<classpathentry kind="lib" path="lib/http-builder-0.7.2-javadoc.jar"/>
+	<classpathentry kind="lib" path="lib/http-builder-0.7.2-sources.jar"/>
 	<classpathentry kind="output" path="target-eclipse/classes"/>
 </classpath>

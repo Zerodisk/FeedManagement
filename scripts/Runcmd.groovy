@@ -2,6 +2,10 @@ import org.junit.Before;
 
 println 'Script starting..'
 
+def push_url = ''
+def push_url_finalise = ''
+def remote_secret_key = ''
+
 def needFinalised = false
 def pendingBatches = feedmanagement.Batch.where{status != feedmanagement.Batch.BatchStatus.DONE && merchant.isActive == true}
 println 'Number of pending batches: ' + pendingBatches.size()

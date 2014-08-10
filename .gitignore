@@ -1,2 +1,2 @@
-/target-eclipse/classes/*
-/target/classes/*
+target-eclipse/classes/*
+target/classes/*

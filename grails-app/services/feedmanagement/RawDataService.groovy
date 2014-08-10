@@ -25,4 +25,24 @@ class RawDataService {
 		
 	}
 	
+	/*
+	 * function to check if new item should be added to DataItemPush
+	 *  - batch is a current Batch
+	 *  - item to check
+	 *  return true if should add, return false to ignore
+	 */
+	def shouldAddToPush(batch, item){
+		
+	}
+	
+	/*
+	 * function to just add item into DataItemRaw
+	 *  - batch is current Batch
+	 *  - item is a single item
+	 */
+	def addRawItem(batch, item){
+		
+	}
+	
+	
 }

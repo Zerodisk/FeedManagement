@@ -11,13 +11,18 @@ class RawDataService {
 	 */
 	def addFeedItems(batch, feedItems){
 		// - get all brand
-		def brands = Brand.getAll()
-
-		for (item in feedItems){
-			if (brands.contains(item.Brand)){
+		def brands = new Brand()
+		brands = brands.getAll()
+		
+		for (item in feedItems){			
+			if (brands.findIndexOf{brand -> brand.name == item.Brand} >= 0){
+				//brand is matched to insert
+				
 				
 			}
+			
 		}
+		
 	}
 	
 }

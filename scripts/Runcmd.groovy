@@ -28,10 +28,11 @@ for (batch in pendingBatches){
 		
 		// - read xml/json file ("/home/tan/Documents/Developments/workspaces/temp/datafeed.json")
 		def jsonObj = d.parseJson(batch.merchant.fileStoreLocal)
+		println 'Number of raw items: ' + jsonObj.size()
 		
 		// - save only the brand needed
 		def feed = new feedmanagement.RawDataService()
-		if (feed.addFeedItems(batch, feed)){
+		if (feed.addFeedItems(batch, jsonObj)){
 			println 'Process raw data file successed'
 			batch.status = feedmanagement.Batch.BatchStatus.FILE_PROCESSED
 			batch.save()

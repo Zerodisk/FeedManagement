@@ -24,17 +24,16 @@ environments {
 			dbCreate = "validate" 									//'validate', 'create-drop'
 			
 			//++++++++++ this is for mac ++++++++
+			/*
 			url = "jdbc:mysql://localhost:8889/NEAT"   				
 			username = "root"
 			password = "root"
-			 
+			*/ 
 			
 			//+++++++++ this is for Ubuntu +++++++++
-			/*
 			url = "jdbc:mysql://localhost/NEAT"   				
 			username = "root"
 			password = "manutd01"
-			*/
         }
     }
     test {

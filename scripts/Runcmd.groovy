@@ -2,9 +2,9 @@ import org.junit.Before;
 
 println 'Script starting..'
 
-def push_url = ''
-def push_url_finalise = ''
-def remote_secret_key = ''
+def push_url = 'http://www.afrofunk.com.au/store/remote/productUpdate'
+def push_url_finalise = 'http://localhost:8081/store/remote/doFinaliseUpdate'
+def remote_secret_key = 'i2J9pLeC1-28DekxaDuvm'
 
 def needFinalised = false
 def pendingBatches = feedmanagement.Batch.where{status != feedmanagement.Batch.BatchStatus.DONE && merchant.isActive == true}
@@ -29,7 +29,6 @@ for (batch in pendingBatches){
 	
 	if (batch.status == feedmanagement.Batch.BatchStatus.FILE_DOWNLOADED){
 		//process the raw file
-		
 		// - read xml/json file ("/home/tan/Documents/Developments/workspaces/temp/datafeed.json")
 		def jsonObj = d.parseJson(batch.merchant.fileStoreLocal)
 		println 'Number of raw items: ' + jsonObj.size()
@@ -49,6 +48,12 @@ for (batch in pendingBatches){
 	
 	if (batch.status == feedmanagement.Batch.BatchStatus.FILE_PROCESSED){
 		//start pushing
+		
+		//get pending push
+		
+		//loop through and push
+		
+		
 	
 	}
 
@@ -61,16 +66,24 @@ for (batch in pendingBatches){
 	
 }
 
+needFinalised = true
+
 if (needFinalised){
 	//do finalise push here
-	
+	def http = new feedmanagement.HttpService()
+	println 'hello'
+	println http.post(push_url_finalise, [secret_code:remote_secret_key])
+	/*
+	if (http.push(push_url_finalise, [secret_code:remote_secret_key])){
+		println 'Push finalise finish'
+	}
+	else{
+		println 'Push finalise failed!!'
+	}
+	*/
 }
 
-/*
-def m = feedmanagement.Merchant.findAllByMerchantId(1)
-new feedmanagement.Batch(merchant: m, status: feedmanagement.Batch.BatchStatus.NEW).save()
-println 'save ok'
-*/
+
 
 
 

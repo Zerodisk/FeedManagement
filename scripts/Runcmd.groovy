@@ -1,6 +1,6 @@
 import org.junit.Before;
 
-println 'Script starting..'
+println '........\n....\n...\n..\n.\nScript starting..'
 
 def push_url = 'http://www.afrofunk.com.au/store/remote/productUpdate'
 def push_url_finalise = 'http://localhost:8081/store/remote/doFinaliseUpdate'
@@ -66,21 +66,16 @@ for (batch in pendingBatches){
 	
 }
 
-needFinalised = true
-
 if (needFinalised){
 	//do finalise push here
 	def http = new feedmanagement.HttpService()
-	println 'hello'
-	println http.post(push_url_finalise, [secret_code:remote_secret_key])
-	/*
-	if (http.push(push_url_finalise, [secret_code:remote_secret_key])){
-		println 'Push finalise finish'
+	if (http.post(push_url_finalise, [secret_code:remote_secret_key]) == 'OK'){
+		println 'Push finalise finish..  Script end here..'
 	}
 	else{
 		println 'Push finalise failed!!'
 	}
-	*/
+	
 }
 
 

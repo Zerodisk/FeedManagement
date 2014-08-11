@@ -1,8 +1,7 @@
 package feedmanagement
 
 import groovyx.net.http.HTTPBuilder
-import static groovyx.net.http.ContentType.*
-import static groovyx.net.http.Method.GET
+import static groovyx.net.http.ContentType.URLENC
 
 
 class HttpService {
@@ -13,33 +12,22 @@ class HttpService {
 	 *  - postData is map data (list of name and value)
 	 *    postData =  [name: 'bob', title: 'construction worker']
 	 *  return data in response body
-	 */
+	 */ 
 	def post(url, postData){
-		println 'hey! i am here ' + url
-		//def http = new HTTPBuilder(url)
-		//println 'hey! i am here 2'
+
 		try{
-			/*
+			def http = new HTTPBuilder( url ) 
 			http.post( body: postData,
-					   requestContentType: URLENC ) { resp ->
-						   return resp.data.text					   
-					   }
-					   */
-			new HTTPBuilder(url).request( POST ) { req ->				
-			  response.success = { resp ->
-				println 'request was successful'
-				//return resp.data.text
-			  }
-			
-			  response.failure = { resp ->
-				println 'request failed'
-				//return resp.status
-			  }
+			           requestContentType: URLENC ) { resp, reader ->
+			 
+			  //println "POST Success: ${resp.statusLine}"
+			  return reader
 			}
 		}
 		catch(Exception e){
 			return e.getMessage()
 		}
+		
 	}
 	
 	

@@ -1,12 +1,13 @@
 package feedmanagement
 
-class DataItemRaw {
-	
+import java.util.Date;
+
+class DataItemPush {
 	Integer id
 	Batch batch
 	
 	String sku
-	String name
+	String productName
 	String category
 	String description
 	String url
@@ -19,18 +20,17 @@ class DataItemRaw {
 	String colour
 	String currency
 	String deliveryCost
-	String deliveryTime
 	String gender
 	String size
-	String stockLevel
 		
 	Date dateCreated
+	Date datePushed
 
-    static constraints = {
+	static constraints = {
 		id()
 		batch()
 		sku()
-		name()
+		productName()
 		category (nullable: true, blank: true)
 		description (nullable: true, blank: true)
 		url (nullable: true, blank: true)
@@ -41,18 +41,18 @@ class DataItemRaw {
 		colour (nullable: true, blank: true)
 		currency (nullable: true, blank: true)
 		deliveryCost (nullable: true, blank: true)
-		deliveryTime (nullable: true, blank: true)
 		gender (nullable: true, blank: true)
 		size (nullable: true, blank: true)
-		stockLevel (nullable: true, blank: true)
 		dateCreated()
-    }
+		datePushed(nullable: true)
+	}
 	
 	static mapping = {
 		version false
-		table name: "DataItemRaw"
+		table name: "DataItemPush"
 		autoTimestamp: true
 				
 		description column: 'description', sqlType: "varchar(500)"
 	}
+
 }

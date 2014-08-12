@@ -26,12 +26,9 @@ environments {
 			url = "jdbc:mysql://localhost/NEAT"
 			username = "root"
 			
-			//++++++++++ this is for mac ++++++++
-			password = "root"
-			 
-			
-			//+++++++++ this is for Ubuntu +++++++++   				
-			//password = "manutd01"
+			password = ""			//+++++++++ for pc +++++++++
+			//password = "root"	    //+++++++++ for mac +++++++++++++
+			//password = "manutd01"	//+++++++++ for Ubuntu ++++++++++  
         }
     }
     test {

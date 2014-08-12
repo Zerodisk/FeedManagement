@@ -26,7 +26,7 @@
 		<link>
 			<name>.link_to_grails_plugins</name>
 			<type>2</type>
-			<location>/Users/Tan/Documents/Development/workspaces/default/FeedManagement/target/work/plugins</location>
+			<location>C:/grails/workspace/FeedManagement/target/work/plugins</location>
 		</link>
 	</linkedResources>
 </projectDescription>

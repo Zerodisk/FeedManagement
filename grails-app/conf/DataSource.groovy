@@ -26,8 +26,8 @@ environments {
 			url = "jdbc:mysql://localhost/afrofunk_datafeed"
 			username = "root"
 			
-			password = ""			//+++++++++ for pc +++++++++ 
-			//password = "root"	    //+++++++++ for mac +++++++++++++
+			//password = ""			//+++++++++ for pc +++++++++ 
+			password = "root"	    //+++++++++ for mac +++++++++++++
 			//password = "manutd01"	//+++++++++ for Ubuntu ++++++++++  
         }
     }

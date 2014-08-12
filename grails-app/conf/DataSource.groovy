@@ -23,10 +23,10 @@ environments {
 			dialect = org.hibernate.dialect.MySQL5InnoDBDialect		//org.hibernate.dialect.DB2Dialect
 			dbCreate = "validate" 									//'validate', 'create-drop'
 			
-			url = "jdbc:mysql://localhost/NEAT"
+			url = "jdbc:mysql://localhost/afrofunk_datafeed"
 			username = "root"
 			
-			password = ""			//+++++++++ for pc +++++++++
+			password = ""			//+++++++++ for pc +++++++++ 
 			//password = "root"	    //+++++++++ for mac +++++++++++++
 			//password = "manutd01"	//+++++++++ for Ubuntu ++++++++++  
         }

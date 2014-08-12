@@ -15,7 +15,7 @@ class RawDataService {
 		brands = brands.getAll()
 		
 		for (item in feedItems){			
-			if (brands.findIndexOf{brand -> brand.name == item.Brand} >= 0){
+			if (brands.findIndexOf{brand -> brand.name.toLowerCase() == item.Brand.toLowerCase()} >= 0){
 				
 				//get previous batch
 				def batchPrevious = Batch.findByBatchId(batch.batchId - 1)
@@ -32,7 +32,7 @@ class RawDataService {
 					//add to push item
 					def pushSrv = new PushDataService()
 					pushSrv.addPushItem(batch, item)
-					println 'added new to push, sku: ' + batch.merchant.merchantId + '-' + item.SKU
+					//println 'added new to push, sku: ' + batch.merchant.merchantId + '-' + item.SKU
 				}
 			}
 			

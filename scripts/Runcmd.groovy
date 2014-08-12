@@ -36,6 +36,7 @@ for (batch in pendingBatches){
 		
 		// - save only the brand needed
 		def feed = new feedmanagement.RawDataService()
+		println 'Processing..... this could take a while.'
 		if (feed.addFeedItems(batch, jsonObj)){
 			println 'Process raw data file successed'
 			batch.status = feedmanagement.Batch.BatchStatus.FILE_PROCESSED
@@ -56,12 +57,12 @@ for (batch in pendingBatches){
 		def pushSrv = new feedmanagement.PushDataService()
 		def numCount = 1
 		for (pushItem in pushPending){
-			println 'Pushing ' + numCount + ' of ' + pushPending.size()
+			print 'Pushing ' + numCount + ' of ' + pushPending.size()
 			if (pushSrv.push(push_url, remote_secret_key, pushItem)){
-				println '  ..push# ' + numCount + ' has successed'
+				println '     ..push# ' + numCount + ' has successed'
 			}
 			else{
-				println '  ..push# ' + numCount + ' has failed !!!!!! press ctrl-c to stop script..'
+				println '     ..push# ' + numCount + ' has failed !!!!!! press ctrl-c to stop script..'
 			}
 			numCount = numCount + 1
 		}
@@ -83,14 +84,14 @@ if (needFinalised){
 	//------------ do finalise push here
 	def http = new feedmanagement.HttpService()
 	if (http.post(push_url_finalise, [secret_code:remote_secret_key]) == 'OK'){
-		println 'Push finalise finish..  Script end here..'
+		println 'Push finalise finish..'
 	}
 	else{
 		println 'Push finalise failed!!'
 	}
-	
 }
 
+println '\n\nScript end here..\n\n...'
 
 
 

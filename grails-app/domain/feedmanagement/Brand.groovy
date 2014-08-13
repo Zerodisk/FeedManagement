@@ -6,11 +6,13 @@ class Brand {
 	
 	Integer brandId
 	String name
+	Merchant merchant
 	Date dateCreated
 
     static constraints = {
 		brandId()
 		name()
+		merchant()
 		dateCreated()
     }
 	

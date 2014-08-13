@@ -10,9 +10,8 @@ class RawDataService {
 	 *  return true if success, false when failed
 	 */
 	def addFeedItems(batch, feedItems){
-		// - get all brand
-		def brands = new Brand()
-		brands = brands.getAll()
+		// - get all brand for a specific marchant
+		def brands = Brand.findAllByMerchant(batch.merchant)
 		
 		for (item in feedItems){			
 			if (brands.findIndexOf{brand -> brand.name.toLowerCase() == item.Brand.toLowerCase()} >= 0){

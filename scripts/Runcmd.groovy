@@ -65,6 +65,7 @@ for (batch in pendingBatches){
 				println '     ..push# ' + numCount + ' has failed !!!!!! press ctrl-c to stop script..'
 			}
 			numCount = numCount + 1
+			sleep(300)
 		}
 		
 		batch.status = feedmanagement.Batch.BatchStatus.PUSHED

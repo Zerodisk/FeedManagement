@@ -54,8 +54,8 @@ def runMenu(){
 def runMain(){
 	println '........\n....\n...\n..\n.\nScript starting..'
 	
-	def push_url = 'http://localhost:88/store/remote/productUpdate'
-	def push_url_finalise = 'http://localhost:88/store/remote/doFinaliseUpdate'
+	def push_url = 'http://www.afrofunk.com.au/store/remote/productUpdate'
+	def push_url_finalise = 'http://www.afrofunk.com.au/store/remote/doFinaliseUpdate'
 	def remote_secret_key = 'i2J9pLeC1-28DekxaDuvm'
 	
 	def needFinalised = false

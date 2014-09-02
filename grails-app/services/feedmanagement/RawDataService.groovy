@@ -93,7 +93,7 @@ class RawDataService {
 			gender: item.Gender,
 			size: item.Size,
 			stockLevel: item.StockLevel
-		).save()
+		).save(flush: true)
 	}
 	
 	

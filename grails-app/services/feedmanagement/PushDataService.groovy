@@ -23,7 +23,7 @@ class PushDataService {
 			deliveryCost: item.DeliveryCost,
 			gender: item.Gender,
 			size: item.Size
-		).save()
+		).save(flush: true)
 	}
 	
 	/*
@@ -57,7 +57,7 @@ class PushDataService {
 		if (http.post(url, dataPost) == 'OK'){
 			//3. mark as pushed if it's OK
 			item.datePushed = new Date()
-			item.save()
+			item.save(flush: true)
 			return true
 		}
 		else{
